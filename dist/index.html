@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>WeatherApp</title>
+</head>
+
+<body>
+
+    <div id="controller">
+        <input id="city-input" type="text" placeholder="search city">
+        <button id="city-btn" onclick=handleSearch()>Go</button>
+        <button id="save-city" >save</button>
+        <button id="remove-city" >remove</button>
+    </div>
+
+
+    <div id="WeatherApp"></div>
+
+    <script id="WeatherApp-template" type="text/x-handlebars-template">
+        {{#each city}}
+            <div id="Weather-conteiner">
+                <div id="name" class="Weather">{{name}}</div>
+                <div id="temperature" class="Weather">{{temperature}}</div>
+                <div id="condition" class="Weather">{{condition}}</div>
+                <div id="conditionPic" class="Weather">
+                    <img src="http://openweathermap.org/img/wn/{{conditionPic}}@2x.png">
+                </div>
+            </div>
+        {{/each}}
+    </script>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"
+        integrity="sha256-/PJBs6QWvXijOFIX04kZpLb6ZtSQckdOIavLWKKOgXU=" crossorigin="anonymous"></script> 
+    <script src="Renderer.js"></script>
+    <script src="TempManager.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
